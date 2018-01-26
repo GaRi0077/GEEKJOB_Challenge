@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : java_practice1-8
     Created on : 2018/01/26, 18:56:45
     Author     : GaRi0077
@@ -13,7 +13,7 @@
 datas.add("10");
 datas.add("100");
 datas.add("soeda");
-datas.add("hayasi");
+datas.add("hayashi");
 datas.add("-20");
 datas.add("118");
 datas.add("END");
