@@ -17,15 +17,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author GaRi0077
  */
-@WebServlet(name = "mesod", urlPatterns = {"/mesod"})
-public class mesod extends HttpServlet {
+@WebServlet(name = "mesod4", urlPatterns = {"/mesod4"})
+public class mesod1 extends HttpServlet {
     
     void myprofile(PrintWriter pw){
         for(int i = 0; i < 3; i++){
-        pw.print("大澤和樹<br>");
-        pw.print("22歳<br>");
-        pw.print("よろしくお願いします。<br>");
-     }
+            pw.print("大澤和樹<br>");
+            pw.print("22歳<br>");
+            pw.print("よろしくお願いします。<br>");
+        }
     }
 
     /**
@@ -41,9 +41,17 @@ public class mesod extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+          int a = 0;
+          
+          for(int j = 0; j < 10; j++){
+               a++;
+          
+          out.print("＊" + a);
             
-            myprofile(out);
-             
+              myprofile(out);
+          
+          }
+            
         }
     }
 
