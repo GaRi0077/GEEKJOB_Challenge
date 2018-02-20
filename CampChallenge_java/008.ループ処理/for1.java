@@ -34,19 +34,19 @@ public class for1 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-          long i,j,w,k;
-          
-          for(i = 8,j = 8,w = 0, k = 1; k <= 20; k++){
-              
-              w = i * j;
-              
-              i = w;
-              
-              out.println(k + "回目" + "=" + w + "<br>");
-              
+            long i,w;
+            
+            int j,k;
+            
+            for(i = 8,j = 8,k = 0; k < 20; k++){
+                
+                i = i * j;
+            
             }
-          
-          
+            
+            out.print(i);
+            
+            
             
         }
     }
