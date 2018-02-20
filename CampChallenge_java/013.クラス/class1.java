@@ -18,7 +18,9 @@ import javax.servlet.http.HttpServletResponse;
  * @author GaRi0077
  */
 @WebServlet(name = "class1", urlPatterns = {"/class1"})
+
 public class class1 extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,7 +35,16 @@ public class class1 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-        class Num{
+            Num object = new Num();
+        
+        object.setName("山田太郎<br>",100);
+        
+        object.out(out);
+            
+        }
+    }
+    
+    class Num{
             public String str = "";
             public int j = 0;
             
@@ -42,21 +53,12 @@ public class class1 extends HttpServlet {
                 this.j = b;
             }
                 
-            public void out(){
+            public void out(PrintWriter out){
                 
                 out.print(str);
                 out.print(j);
            }
          }
-            
-        Num object = new Num();
-        
-        object.setName("山田太郎<br>",100);
-        
-        object.out();
-        
-            }
-        }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
