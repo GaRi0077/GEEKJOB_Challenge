@@ -18,7 +18,7 @@ import java.util.Calendar;
  *
  * @author GaRi0077
  */
-public class date extends HttpServlet {
+public class date2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,15 +33,17 @@ public class date extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
+             Calendar c = Calendar.getInstance();
 
-            Calendar c = Calendar.getInstance();
-
-            c.set(2016, 0, 1, 0, 0, 0);
+            c.set(1998, 4, 21, 1, 23, 45);
             
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/M/d HH時mm分ss秒");
             
             out.print(sdf.format(c.getTime()));
-
+            
+            
+            
         }
     }
 
