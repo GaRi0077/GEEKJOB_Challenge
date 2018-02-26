@@ -8,17 +8,30 @@ package org.mypackage.sample;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+class Num {
+
+    public String str ="name:";
+    public int j = 0;
+
+    public void setName(String a, int b) {
+        this.str = a;
+        this.j = b;
+    }
+    
+    public void out(PrintWriter pw){
+        
+        pw.print(str);
+        pw.print(j);
+    }
+}
 /**
  *
  * @author GaRi0077
  */
-@WebServlet(name = "class1", urlPatterns = {"/class1"})
-
 public class class1 extends HttpServlet {
 
     /**
@@ -33,32 +46,17 @@ public class class1 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            
-            Num object = new Num();
-        
-        object.setName("山田太郎<br>",100);
-        
+        try(PrintWriter out = response.getWriter()){
+
+        Num object = new Num();
+
+        object.setName("山田太郎<br>", 100);
+
         object.out(out);
-            
-        }
+
     }
-    
-    class Num{
-            public String str = "";
-            public int j = 0;
-            
-            public void setName(String a, int b) {
-                this.str = a;
-                this.j = b;
-            }
-                
-            public void out(PrintWriter out){
-                
-                out.print(str);
-                out.print(j);
-           }
-         }
+}
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -70,7 +68,7 @@ public class class1 extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -84,7 +82,7 @@ public class class1 extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -95,7 +93,7 @@ public class class1 extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo() {
+        public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
