@@ -7,15 +7,14 @@ package org.mypackage.sample;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Calendar;
+
 /**
  *
  * @author GaRi0077
@@ -36,12 +35,16 @@ public class date1 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            Date day = new Date(10*365*24*60*60*1000);
+            Calendar c = Calendar.getInstance();
             
-            out.print(day);
+            c.set(2016, 0, 1, 0, 0, 0);
             
+            Date d = new Date();
             
-           
+            d = c.getTime();
+            
+            out.print(d.getTime());
+            
         }
     }
 
