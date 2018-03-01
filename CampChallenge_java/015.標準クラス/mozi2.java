@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author GaRi0077
  */
-public class mozi1 extends HttpServlet {
+public class mozi2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,10 +32,9 @@ public class mozi1 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            String name = "大澤　和樹";
+            String mail = "blood0328@gmail.com";
             
-            out.println(name.getBytes().length);
-            out.print(name.length());       
+            out.print(mail.substring(10).length());
             
         }
     }
